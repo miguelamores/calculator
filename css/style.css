@@ -1,0 +1,96 @@
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #FF3366;
+  --color-primary-dark: #BA265D;
+  --color-primary-blue: #0077c0;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --shadow-dark: 0 1rem 2rem rgba(0,0,0,.1);
+  --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+  --line: 1px solid var(--color-grey-light-2); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  border: 1px solid gray;
+  min-height: 50rem; }
+
+.calculator {
+  margin: 8rem;
+  padding: 2rem;
+  width: 50%;
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem; }
+  .calculator__title {
+    border-bottom: 1px solid grey; }
+
+.title {
+  margin: 1rem 2rem;
+  border-bottom: 1px solid gray; }
+
+.slidecontainer {
+  width: 100%; }
+  .slidecontainer__slider {
+    width: 60%;
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s; }
+    .slidecontainer__slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--color-primary-blue);
+      cursor: pointer; }
+    .slidecontainer__slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--color-primary-blue);
+      cursor: pointer; }
+  .slidecontainer__input {
+    width: 5rem; }
+
+.label {
+  font-family: HelveticaNeue;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #3e3d3f; }

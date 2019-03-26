@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Mortage calculator &mdash; Your all-in-one booking app</title>
+
+        
+    </head>
+    <body>
+        <script src="dist/bundle.js"></script>
+       <div class="container">
+            <h1 class="title">Mortgage calculator</h1>
+
+            <div class="calculator">
+                <h2 class="calculator__title">
+                    Change values to calculate your results
+                </h2>
+
+                <div class="slidecontainer">
+                    <p class="label">Years of mortgage</p>
+                    <span class="slidecontainer__output min" id="demo">1</span>
+                    <input type="range" min="1" max="100" value="50" class="slidecontainer__slider" id="myRange">
+                    <input type="text" class="slidecontainer__input" id="year" />
+                </div>
+            </div>
+       </div>
+    </body>
+
+</html>
