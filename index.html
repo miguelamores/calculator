@@ -25,11 +25,21 @@
                 <div class="slidecontainer">
                     <p class="label">Years of mortgage</p>
                     <div class="slidecontainer__range">
-                        <span class="slidecontainer__output min" id="demo">1</span>
-                        <input type="range" min="1" max="100" value="50" class="slidecontainer__slider" id="myRange">
-                        <input type="text" class="slidecontainer__input" id="year" value="50"></input>
+                        <span class="slidecontainer__output min">1</span>
+                        <input type="range" min="1" max="40" value="25" class="slidecontainer__slider" id="myRange">
+                        <span class="slidecontainer__output min">40</span>
+                        <input type="text" class="slidecontainer__input" id="year" value="25"></input>
                     </div>
-                    
+                </div>
+
+                <div class="slidecontainer">
+                    <p class="label">Rate of interest (%)</p>
+                    <div class="slidecontainer__range">
+                        <span class="slidecontainer__output min" >1</span>
+                        <input type="range" min="1" max="10" value="5" class="slidecontainer__slider" id="interest">
+                        <span class="slidecontainer__output min">10</span>
+                        <input type="text" class="slidecontainer__input" id="interestOutput" value="5.0"></input>
+                    </div>
                 </div>
             </div>
        </div>
