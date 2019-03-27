@@ -13,6 +13,7 @@
 
     @media only screen and (max-width: $bp-small) {
         flex-direction: column;
+        padding: 2rem;
     }
 }
 
@@ -22,8 +23,12 @@
     flex: 0 0 60%;
     padding: 2rem;
     box-shadow: var(--shadow-dark);
-
+    z-index: 100;
     min-height: 50rem;
+
+    @media only screen and (max-width: $bp-small) {
+        width: 100%;
+    }
 
     &__title {
         margin: 2rem 0;
