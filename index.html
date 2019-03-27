@@ -17,58 +17,66 @@
        <div class="container">
             <h1 class="title">Mortgage calculator</h1>
 
-            <div class="calculator">
-                <h2 class="calculator__title">
-                    Change values to calculate your results
-                </h2>
+            <div class="content">
 
-                <div class="slidecontainer">
-                    <p class="label">Years of mortgage</p>
-                    <div class="slidecontainer__range">
-                        <span class="slidecontainer__output min">1</span>
-                        <input type="range" min="1" max="40" value="25" class="slidecontainer__slider" id="myRange">
-                        <span class="slidecontainer__output min">40</span>
-                        <input type="text" class="slidecontainer__input" id="year" value="25"></input>
+                <div class="calculator">
+                    <h2 class="calculator__title">
+                        Change values to calculate your results
+                    </h2>
+
+                    <div class="slidecontainer">
+                        <p class="label">Years of mortgage</p>
+                        <div class="slidecontainer__range">
+                            <span class="slidecontainer__output min">1</span>
+                            <input type="range" min="1" max="40" value="25" class="slidecontainer__slider" id="myRange">
+                            <span class="slidecontainer__output min">40</span>
+                            <input type="text" class="slidecontainer__input" id="year" value="25"></input>
+                        </div>
                     </div>
-                </div>
 
-                <div class="slidecontainer">
-                    <p class="label">Rate of interest (%)</p>
-                    <div class="slidecontainer__range">
-                        <span class="slidecontainer__output min" >1</span>
-                        <input type="range" min="1" max="10" value="5" class="slidecontainer__slider" id="interest">
-                        <span class="slidecontainer__output min">10</span>
-                        <input type="text" class="slidecontainer__input" id="interestOutput" value="5.0"></input>
+                    <div class="slidecontainer">
+                        <p class="label">Rate of interest (%)</p>
+                        <div class="slidecontainer__range">
+                            <span class="slidecontainer__output min" >1</span>
+                            <input type="range" min="1" max="10" value="5" class="slidecontainer__slider" id="interest">
+                            <span class="slidecontainer__output min">10</span>
+                            <input type="text" class="slidecontainer__input" id="interestOutput" value="5"></input>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <p class="label">Loan Amount</p>
-                    <div class="form-group__input-container">
-                        <span class="form-group__dollar">$</span>
-                        <input type="text" class="form-group__input">
-                    </div>
-                </div>
-
-                <div class="anual">
-                    <div class="form-group form-group__width">
-                        <p class="label">Annual Tax</p>
+                    <div class="form-group">
+                        <p class="label">Loan Amount</p>
                         <div class="form-group__input-container">
                             <span class="form-group__dollar">$</span>
                             <input type="text" class="form-group__input">
                         </div>
                     </div>
 
-                    <div class="form-group form-group__width">
-                        <p class="label">Annual Insurance</p>
-                        <div class="form-group__input-container">
-                            <span class="form-group__dollar">$</span>
-                            <input type="text" class="form-group__input">
+                    <div class="anual">
+                        <div class="form-group form-group__width">
+                            <p class="label">Annual Tax</p>
+                            <div class="form-group__input-container">
+                                <span class="form-group__dollar">$</span>
+                                <input type="text" class="form-group__input">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group__width">
+                            <p class="label">Annual Insurance</p>
+                            <div class="form-group__input-container">
+                                <span class="form-group__dollar">$</span>
+                                <input type="text" class="form-group__input">
+                            </div>
                         </div>
                     </div>
+
+                    <button class="calculator__button">Calculate</button>
                 </div>
 
-                <button class="calculator__button">Calculate</button>
+                <div class="result">
+
+                </div>
+
             </div>
        </div>
     </body>

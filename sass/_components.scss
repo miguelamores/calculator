@@ -1,18 +1,22 @@
 .container {
     max-width: 120rem;
     margin: 8rem auto;
-    //background-color: var(--color-grey-light-1);
-    //box-shadow: var(--shadow-dark);
     border: 1px solid gray;
     min-height: 50rem;
 }
 
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+}
+
 .calculator {
-    //max-width: 120rem;
-    margin: 8rem;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 60%;
     padding: 2rem;
-    width: 50%;
-    //background-color: var(--color-grey-light-1);
     box-shadow: var(--shadow-dark);
 
     min-height: 50rem;
@@ -143,4 +147,12 @@
     display: flex;
     justify-content: space-between;
     margin: 2rem 0;
+}
+
+////////////////RESULT///////////////////
+
+.result {
+    width: 29.8rem;
+    height: 44rem;
+    background-color: #eaf6fa;
 }
