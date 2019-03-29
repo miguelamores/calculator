@@ -18,4 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
         interestOutput.value = this.value;
     }
 
+    const resultBox = document.getElementsByClassName('result')[0];
+    document.getElementById('calculate').onclick = function() {
+        if (window.screen.width <= 600) {
+            resultBox.style.animation = 'moveInLeft 1s ease-out';
+            resultBox.style.opacity = 1;
+            window.scrollBy(0, 300);
+        }
+    }
+
 });
