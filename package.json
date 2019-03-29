@@ -6,7 +6,7 @@
     "compile:sass": "node-sass sass/main.scss css/style.css -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack && webpack-dev-server"
   },
   "author": "miguel.amores",
   "license": "MIT",
