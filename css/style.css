@@ -13,6 +13,7 @@
   --color-white: #fff;
   --color-grey: #a6a6a6;
   --color-grey-2: #3e3d3f;
+  --color-red: #da3535;
   --shadow-dark: 0 1rem 2rem rgba(0,0,0,.1);
   --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
   --line: 1px solid var(--color-grey-light-2); }
@@ -156,10 +157,13 @@ body {
     border: solid 1px var(--color-grey-dark-3);
     padding: 0 3rem;
     font-size: inherit; }
+  .form-group__input--error {
+    border: solid 1px var(--color-red); }
   .form-group__dollar {
     position: absolute;
     left: 2rem; }
   .form-group__input:focus {
+    box-shadow: 0 0 4px 0 rgba(62, 61, 63, 0.62);
     border: solid 1px #3e3d3f;
     outline: none; }
   .form-group__width {
@@ -223,6 +227,19 @@ body {
   letter-spacing: 0.3px;
   text-align: left;
   color: #3e3d3f; }
+
+.error-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: var(--color-red);
+  display: none; }
+  .error-label__show {
+    display: inline; }
 
 @keyframes moveInLeft {
   0% {
