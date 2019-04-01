@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const slider = document.getElementById("myRange");
     let output = document.getElementById("year");
+    const btnCalculate = document.getElementById('calculate');
     const amount = document.getElementById('amount');
     const amountLabel = document.getElementById('amount-label');
 
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const insuranceLabel = document.getElementById('insurance-label');
 
     const errorField = function setErrorClass(field) {
-        field.className = 'form-group__input form-group__input--error error-label error-label__show';
+        field.className = 'form-group__input form-group__input--error'
     }
 
     const errorLabel = function setErrorLabel(field) {
@@ -24,16 +25,28 @@ document.addEventListener("DOMContentLoaded", function() {
             errorField(amount);
             errorLabel(amountLabel);
             hasError = true;
-        } 
+        } else {
+            amount.className = 'form-group__input';
+            amountLabel.className = 'error-label__hide';
+            hasError = false;
+        }
         if (tax.value === "") {
             errorField(tax);
             errorLabel(taxLabel);
             hasError = true;
-        } 
+        } else {
+            tax.className = 'form-group__input';
+            taxLabel.className = 'error-label__hide';
+            hasError = false;
+        }
         if (insurance.value === "") {
             errorField(insurance);
             errorLabel(insuranceLabel);
             hasError = true;
+        } else {
+            insurance.className = 'form-group__input';
+            insuranceLabel.className = 'error-label__hide';
+            hasError = false;
         }
         return hasError;
     }
@@ -54,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const resultBox = document.getElementsByClassName('result')[0];
-    document.getElementById('calculate').onclick = function() {
+    btnCalculate.onclick = function() {
         if (window.screen.width <= 600) {
             resultBox.style.animation = 'moveInLeft 1s ease-out';
             resultBox.style.opacity = 1;
