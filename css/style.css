@@ -119,13 +119,11 @@ body {
 ::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
-  /* 1 */
   height: 40px;
   border-radius: 50%;
   background: #fff;
   box-shadow: -100vw 0 0 100vw dodgerblue;
-  border: none;
-  /* 1 */ }
+  border: none; }
 
 ::-moz-range-thumb {
   width: 25px;
@@ -240,6 +238,8 @@ body {
   display: none; }
   .error-label__show {
     display: inline; }
+  .error-label__hide {
+    display: none; }
 
 @keyframes moveInLeft {
   0% {

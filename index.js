@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const slider = document.getElementById("myRange");
-    let output = document.getElementById("year");
+    let yearsOfMortgage = document.getElementById("year");
     const btnCalculate = document.getElementById('calculate');
     const amount = document.getElementById('amount');
     const amountLabel = document.getElementById('amount-label');
@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function() {
         return hasError;
     }
 
-    output.value = slider.value; // Display the default slider value
+    yearsOfMortgage.value = slider.value; // Display the default slider value
     // Update the current slider value (each time you drag the slider handle)
     slider.oninput = function() {
-        output.value = this.value;
+        yearsOfMortgage.value = this.value;
     }
 
 
@@ -73,7 +73,18 @@ document.addEventListener("DOMContentLoaded", function() {
             resultBox.style.opacity = 1;
             window.scrollBy(0, 300);
         }
-        validate();
+        if (!validate()) {
+            myResult();
+        }
+    }
+
+    const myResult = function calculatePrincipleTaxInsurance() {
+        let principleAndInterest = ((interestOutput.value / 100) / 12) * amount.value / (1 - Math.pow((1 + ((interestOutput.value / 100) / 12)), - yearsOfMortgage.value * 12));
+        let taxResult = tax / 12;
+        let insuranceResult = insurance / 12;
+        let totalPayment = principleAndInterest + taxResult + insuranceResult;
+
+        document.getElementById('interestLabel').textContent = `$ ${principleAndInterest.toFixed(2)}`;
     }
 
 });
