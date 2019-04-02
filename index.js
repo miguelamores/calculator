@@ -19,6 +19,19 @@ document.addEventListener("DOMContentLoaded", function() {
         field.className = 'error-label error-label__show';
     }
 
+    const errorMessage = function setErrorMessageByDevice() {
+        if (window.screen.width <= 600) {
+            amountLabel.textContent = 'Mandatory field';
+            taxLabel.textContent = 'Mandatory field';
+            insuranceLabel.textContent = 'Mandatory field';
+        } else {
+            amountLabel.textContent = 'Loan Amount is mandatory';
+            taxLabel.textContent = 'Annual Tax is mandatory';
+            insuranceLabel.textContent = 'Annual Insurance is mandatory';
+        }
+        
+    }
+
     const validate = function validationFields() {
         let hasError = false;
         if (amount.value === "" ) {
@@ -48,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
             insuranceLabel.className = 'error-label__hide';
             hasError = false;
         }
+
+        hasError ? errorMessage() : null;
         return hasError;
     }
 
@@ -68,23 +83,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const resultBox = document.getElementsByClassName('result')[0];
     btnCalculate.onclick = function() {
-        if (window.screen.width <= 600) {
-            resultBox.style.animation = 'moveInLeft 1s ease-out';
-            resultBox.style.opacity = 1;
-            window.scrollBy(0, 300);
-        }
         if (!validate()) {
             myResult();
+            if (window.screen.width <= 600) {
+                resultBox.style.animation = 'moveInLeft 1s ease-out';
+                resultBox.style.opacity = 1;
+                window.scrollBy(0, 300);
+            }
         }
     }
 
     const myResult = function calculatePrincipleTaxInsurance() {
         let principleAndInterest = ((interestOutput.value / 100) / 12) * amount.value / (1 - Math.pow((1 + ((interestOutput.value / 100) / 12)), - yearsOfMortgage.value * 12));
-        let taxResult = tax / 12;
-        let insuranceResult = insurance / 12;
+        let taxResult = tax.value / 12;
+        let insuranceResult = insurance.value / 12;
         let totalPayment = principleAndInterest + taxResult + insuranceResult;
 
         document.getElementById('interestLabel').textContent = `$ ${principleAndInterest.toFixed(2)}`;
+        document.getElementById('taxLabel').textContent = `$ ${taxResult.toFixed(2)}`;
+        document.getElementById('insuranceLabel').textContent = `$ ${insuranceResult.toFixed(2)}`;
+        document.getElementById('totalPaymentLabel').textContent = `$ ${totalPayment.toFixed(2)}`;
     }
 
 });

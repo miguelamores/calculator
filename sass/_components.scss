@@ -187,12 +187,25 @@
 
     &__unit-container {
         border-bottom: 1px solid var(--color-grey-2);
+
+        @media only screen and (max-width: $bp-small) {
+            border: none;
+        }
     }
 
     &__unit {
         display: flex;
         flex-direction: column;
         margin-bottom: 2.5rem;
+
+        @media only screen and (max-width: $bp-small) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: solid 1px #b2b2b2;
+            padding-bottom: 1rem;
+        }
     }
 
     &__label {
@@ -202,7 +215,28 @@
 
     &__price {
         font-size: 1.8rem;
+        font-weight: bold;
         color: var(--color-grey-2);
+
+        @media only screen and (max-width: $bp-small) {
+            font-weight: normal;
+        }
+    }
+
+    &__total-price {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: var(--color-grey-2);
+
+        @media only screen and (max-width: $bp-small) {
+            font-weight: normal;
+        }
+    }
+
+    &__total-title {
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.4rem;
+        }
     }
 
     &__total {
@@ -211,5 +245,12 @@
         font-size: 1.8rem;
         margin-top: 2.5rem;
         color: var(--color-grey-2);
+
+        @media only screen and (max-width: $bp-small) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }
