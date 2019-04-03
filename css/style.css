@@ -45,6 +45,9 @@ body {
   margin: 8rem auto;
   border: 1px solid gray;
   min-height: 50rem; }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      margin: 0 .5rem; } }
 
 .content {
   display: flex;
@@ -115,6 +118,11 @@ body {
     border-radius: 5px;
     text-align: center;
     font-size: 1.6rem; }
+  .slidecontainer__output {
+    min-width: 2.5rem;
+    margin-right: .5rem; }
+    .slidecontainer__output:not(:first-child) {
+      margin-left: .3rem; }
 
 ::-webkit-slider-thumb {
   -webkit-appearance: none;

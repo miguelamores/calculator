@@ -11,14 +11,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const insurance = document.getElementById('insurance');
     const insuranceLabel = document.getElementById('insurance-label');
 
+    const interestSlider = document.getElementById("interest");
+    let interestOutput = document.getElementById("interestOutput");
+
+    const resultBox = document.getElementsByClassName('result')[0];
+
+    /**
+     * Represents error container.
+     * @param {string} field - The name of the field.
+     */
     const errorField = function setErrorClass(field) {
         field.className = 'form-group__input form-group__input--error'
     }
 
+    /**
+     * Set the error class to the label
+     * @param {string} field - The name of the field.
+     */
     const errorLabel = function setErrorLabel(field) {
         field.className = 'error-label error-label__show';
     }
 
+    /**
+     * Set the error message acording to device
+     */
     const errorMessage = function setErrorMessageByDevice() {
         if (window.screen.width <= 600) {
             amountLabel.textContent = 'Mandatory field';
@@ -32,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
 
+    /**
+     * Validate empty fields
+     */
     const validate = function validationFields() {
         let hasError = false;
         if (amount.value === "" ) {
@@ -66,22 +85,19 @@ document.addEventListener("DOMContentLoaded", function() {
         return hasError;
     }
 
-    yearsOfMortgage.value = slider.value; // Display the default slider value
-    // Update the current slider value (each time you drag the slider handle)
+    yearsOfMortgage.value = slider.value;
     slider.oninput = function() {
         yearsOfMortgage.value = this.value;
     }
 
-
-    const interestSlider = document.getElementById("interest");
-    let interestOutput = document.getElementById("interestOutput");
-    interestOutput.value = interestSlider.value; // Display the default slider value
-    // Update the current slider value (each time you drag the slider handle)
+    interestOutput.value = interestSlider.value;
     interestSlider.oninput = function() {
         interestOutput.value = this.value;
     }
 
-    const resultBox = document.getElementsByClassName('result')[0];
+    /**
+     * Set the animation to result block
+     */
     btnCalculate.onclick = function() {
         if (!validate()) {
             myResult();
@@ -93,6 +109,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    /**
+     * Make the operations to show in result block
+     */
     const myResult = function calculatePrincipleTaxInsurance() {
         let principleAndInterest = ((interestOutput.value / 100) / 12) * amount.value / (1 - Math.pow((1 + ((interestOutput.value / 100) / 12)), - yearsOfMortgage.value * 12));
         let taxResult = tax.value / 12;
