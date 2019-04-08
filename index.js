@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const resultBox = document.getElementsByClassName('result')[0];
 
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor); 
+    if (isChrome) {
+        slider.style.overflow = 'hidden';
+        interestSlider.style.overflow = 'hidden';
+    }
+
     /**
      * Represents error container.
      * @param {string} field - The name of the field.
